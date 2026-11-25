@@ -187,3 +187,43 @@ themeToggle.addEventListener("click", () => {
     applyTheme(nextTheme);
     localStorage.setItem("sepuldev-theme", nextTheme);
 });
+
+/* =========================
+   MENÚ MÓVIL
+========================= */
+
+const menuToggle = document.querySelector(".menu-toggle");
+
+function closeMobileMenu() {
+    navLinksContainer.classList.remove("open");
+
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Abrir menú");
+
+    menuToggle.innerHTML = '<i class="bi bi-list"></i>';
+}
+
+menuToggle.addEventListener("click", () => {
+    const isOpen = navLinksContainer.classList.toggle("open");
+
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+
+    menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Cerrar menú" : "Abrir menú"
+    );
+
+    menuToggle.innerHTML = isOpen
+        ? '<i class="bi bi-x-lg"></i>'
+        : '<i class="bi bi-list"></i>';
+});
+
+navLinks.forEach((link) => {
+    link.addEventListener("click", closeMobileMenu);
+});
+
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+        closeMobileMenu();
+    }
+});

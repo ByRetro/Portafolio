@@ -1512,3 +1512,566 @@ body.dark-mode .form-group input::placeholder,
 body.dark-mode .form-group textarea::placeholder {
     color: #91aab3;
 }
+
+/* =========================
+   NAVBAR RESPONSIVE
+========================= */
+
+.menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: var(--primary-light);
+    color: var(--primary-dark);
+
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+/* Tablets y celulares */
+@media (max-width: 768px) {
+
+    .header {
+        padding: 15px 0;
+    }
+
+    .navbar {
+        width: 90%;
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 1.6rem;
+        margin-right: auto;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+        padding: 20px 5%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        background: var(--bg);
+        border-bottom: 1px solid var(--primary-light);
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease,
+            transform 0.3s ease;
+    }
+
+    .nav-links.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .nav-links li:not(.nav-indicator) {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 14px 5px;
+    }
+
+    .nav-indicator {
+        display: none;
+    }
+}
+
+/* Botón hamburguesa en modo oscuro */
+body.dark-mode .menu-toggle {
+    background: #19424b;
+    color: #80e4df;
+}
+
+body.dark-mode .nav-links {
+    background: #091c25;
+    border-bottom-color: #24515c;
+}
+
+/* =========================
+   PROYECTOS RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .projects {
+        width: 90%;
+        padding: 70px 0;
+    }
+
+    .projects-header {
+        margin-bottom: 35px;
+    }
+
+    .projects-header h2 {
+        font-size: clamp(2rem, 7vw, 2.8rem);
+        letter-spacing: -1px;
+    }
+
+    .project-card {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 25px;
+        margin-bottom: 25px;
+    }
+
+    .project-info h3 {
+        font-size: 2.2rem;
+    }
+
+    .project-description {
+        font-size: 0.95rem;
+    }
+
+    .project-actions {
+        gap: 15px;
+    }
+
+    .project-preview {
+        min-height: 220px;
+    }
+
+    .project-details {
+        grid-column: 1;
+    }
+
+    .project-details-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .project-card.open .project-details-content {
+        padding-top: 30px;
+    }
+}
+/* =========================
+   SOBRE MÍ RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .about {
+        padding: 70px 5%;
+    }
+
+    .about-header {
+        margin-bottom: 35px;
+    }
+
+    .about-content {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    .about-text {
+        min-width: 0;
+        padding: 25px;
+        gap: 20px;
+    }
+
+    .about-text p {
+        font-size: 0.95rem;
+        line-height: 1.8;
+    }
+
+    .about-highlights {
+        min-width: 0;
+        gap: 15px;
+    }
+
+    .about-highlight {
+        padding: 22px 20px;
+        gap: 18px;
+    }
+
+    .about-highlight i {
+        font-size: 1.7rem;
+    }
+
+}
+
+/* =========================
+   SERVICIOS RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .services {
+        padding: 70px 5%;
+    }
+
+    .services-header {
+        margin-bottom: 35px;
+    }
+
+    .services-header h2 {
+        font-size: clamp(2rem, 7vw, 2.8rem);
+    }
+
+    .services-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .service-card {
+        min-width: 0;
+        min-height: auto;
+        padding: 30px 25px;
+    }
+
+    .service-number {
+        top: 25px;
+        right: 25px;
+    }
+
+    .service-card > i {
+        font-size: 2rem;
+        margin-bottom: 25px;
+    }
+
+    .service-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+    }
+
+    .service-card p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .services-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 35px;
+        padding: 25px;
+    }
+
+    .services-footer p {
+        font-size: 1.15rem;
+    }
+
+    .services-button {
+        width: 100%;
+        justify-content: center;
+        white-space: normal;
+        text-align: center;
+    }
+
+}
+
+
+/* =========================
+   CONTACTO RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .contact {
+        padding: 70px 5%;
+    }
+
+    .contact-header {
+        margin-bottom: 35px;
+    }
+
+    .contact-header h2 {
+        font-size: clamp(2rem, 7vw, 2.8rem);
+        line-height: 1.15;
+    }
+
+    .contact-content {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 25px;
+    }
+
+    .contact-info,
+    .contact-form {
+        width: 100%;
+        min-width: 0;
+        padding: 28px 22px;
+        box-sizing: border-box;
+    }
+
+    .contact-info h3 {
+        font-size: 1.6rem;
+        line-height: 1.25;
+    }
+
+    .contact-info p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+
+    .contact-form textarea {
+        min-height: 150px;
+        resize: vertical;
+    }
+
+    .contact-submit {
+        width: 100%;
+        justify-content: center;
+    }
+
+}
+
+
+/* =========================
+   FOOTER RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    footer {
+        padding: 45px 24px 30px;
+    }
+
+    .footer-container,
+    .footer-content,
+    .footer-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 22px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .footer-brand {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .footer-socials {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .footer-bottom p {
+        margin: 0;
+        line-height: 1.6;
+        font-size: 0.85rem;
+    }
+
+}
+
+
+/* =========================
+   MENÚ HAMBURGUESA MÓVIL
+========================= */
+
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: flex;
+        flex-shrink: 0;
+    }
+
+    .navbar {
+        display: flex;
+        align-items: center;
+    }
+
+}
+
+/* =========================
+   AJUSTE NAVBAR MÓVIL
+========================= */
+
+@media (max-width: 768px) {
+
+    .header {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .navbar {
+        width: 90%;
+        max-width: 100%;
+        min-width: 0;
+
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+        margin-right: auto;
+        min-width: 0;
+        white-space: nowrap;
+    }
+
+    .theme-toggle {
+        flex-shrink: 0;
+    }
+
+    .menu-toggle {
+        flex-shrink: 0;
+    }
+}
+@media (max-width: 360px) {
+
+    .navbar {
+        width: 94%;
+        gap: 8px;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .theme-toggle {
+        width: 40px;
+    }
+
+    .menu-toggle {
+        width: 38px;
+        height: 38px;
+    }
+}
+@media (max-width: 768px) {
+
+    .hero-background-text {
+        display: none;
+    }
+    
+    .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    justify-content: center;
+    gap: 12px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .hero-background-text {
+        display: none;
+    }
+
+    .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    justify-content: center;
+    gap: 12px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .header {
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+
+    .navbar {
+        width: 100%;
+        min-width: 0;
+        padding: 0 12px;
+        box-sizing: border-box;
+        gap: 8px;
+    }
+
+    .navbar .logo {
+        font-size: 1.3rem;
+        margin-right: auto;
+    }
+
+    .theme-toggle,
+    .menu-toggle {
+        flex-shrink: 0;
+        margin: 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #inicio {
+    padding-top: 110px;
+    }
+
+    #inicio h1 {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+    line-height: 1.1;
+    }
+}
+
+.sepuldev-preview {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 2.18 / 1;
+    overflow: hidden;
+}
+
+.sepuldev-preview .project-preview-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.project-card + .project-card {
+    margin-top: 32px;
+}

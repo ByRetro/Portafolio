@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link REL="icon" type="image/svg+xml" href="img/favicon.svg">
 </head>
 
 <body>
@@ -19,7 +20,7 @@
                 Sepul<span>Dev.</span>
             </a>
 
-            <ul class="nav-links">
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#inicio" class="active">Inicio</a></li>
                 <li><a href="#proyectos">Proyectos</a></li>
                 <li><a href="#sobre-mi">Sobre mí</a></li>
@@ -34,6 +35,16 @@
                     aria-label="Activar modo oscuro"
                     aria-pressed="false">
                 <i class="bi bi-moon-stars"></i>
+            </button>
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Abrir menú"
+                aria-expanded="false"
+                aria-controls="nav-links"
+            >
+                <i class="bi bi-list"></i>
             </button>
 
         </nav>
@@ -166,7 +177,7 @@
                             <span>↓</span>
                         </button>
 
-                        <a href="https://github.com/ByRetro"
+                        <a href="https://github.com/ByRetro/Portafolio"
                            class="project-code"
                            target="_blank"
                            rel="noopener noreferrer">
@@ -178,13 +189,12 @@
 
                 </div>
 
-                <div class="project-preview">
-
-                    <div class="preview-placeholder">
-                        <span>SepulDev.</span>
-                        <p>Explore. Learn. Create.</p>
-                    </div>
-
+                <div class="project-preview sepuldev-preview">
+                    <img
+                        src="img/sepuldev-preview.png"
+                        alt="Vista previa del protafolio profesional SepulDev"
+                        class="project-preview-image"
+                        >
                 </div>
 
                 <div class="project-details">
@@ -225,10 +235,12 @@
                             <p class="detail-number">04</p>
                             <h4>Características</h4>
                             <p>
-                                Navegación dinámica, detección automática de secciones,
-                                animaciones sutiles, integración con redes profesionales
-                                y una estructura preparada para adaptarse a distintos
-                                dispositivos.
+                                Diseño responsivo, modo claro y oscuro,
+                                navegación dinámica con detección automática
+                                de secciones, menú hamburguesa para dispositivos
+                                móviles, tarjetas expandibles, animaciones
+                                e integración de un formulario de contacto
+                                mediante Formspree.
                             </p>
                         </div>
 
